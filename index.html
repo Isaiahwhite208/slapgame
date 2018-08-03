@@ -14,16 +14,38 @@
 
 <body>
   <div class="container-fluid">
-    <div class="row"></div>
-    <div class="row"></div>
-    <div class="row"></div>
-    <div class="row"></div>
-    <div class="row"></div>
+    <div class="row-sm-12">
+      <span>Name:
+        <span id="name">TEST</span>
+      </span>
+    </div>
+    <div class="row-sm-12">
+      <span>Health:
+        <span id="health">--</span>
+      </span>
+    </div>
+    <div class="row-sm-12">
+      <span>Hit(s):
+        <span id="hits">--</span>
+      </span>
+    </div>
+    <div class="row">
+      <img src="//unsplash.it/200/200" id="target" alt="target">
+    </div>
+    <br>
+    <div class="row">
+      <button id="btn btn-slap" onclick="slap()">Slap</button>
+      <button id="btn btn-punch" onclick="punch()">Punch</button>
+      <button id="btn btn-kick" onclick="kick()">Kick</button>
+    </div>
+    <br>
+    <div class="row">
+      <button id="btn btn-shield" onclick="shield()">Shield</button>
+      <button id="btn btn-slag" onclick="slag()">Slag</button>
+      <button id="btn btn-heal" onclick="heal()">Heal</button>
+
+    </div>
   </div>
-  <img src="//unsplash.it/200/200" id="target" alt="target">
-  <button id="btn btn-slap" onclick="slap()"></button>
-  <button id="btn btn-punch" onclick="punch()"></button>
-  <button id="btn btn-kick" onclick="kick()"></button>
 
 </body>
 
