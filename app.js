@@ -6,15 +6,15 @@ function draw() {
 
 function slap() {
  health -= 1
- alert(health)
+ draw()
 }
 
 function kick() {
  health -= 10
- alert(health)
+ draw()
 }
 
 function punch() {
  health -= 5
- alert(health)
+ draw()
 }
