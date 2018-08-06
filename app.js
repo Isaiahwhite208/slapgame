@@ -1,54 +1,72 @@
-let health = 100
-let hits = 0
+let target = {
+ health: 100,
+ hits: 0,
+ items: []
+}
 
 let mods = {
  shield: {
-  modifier: .5,
+  modifier: -.5,
  },
  amp: {
-  modifier: 1.5
+  modifier: .5
  },
  heal: {
-  modifier: -5
+  modifier: 0
  }
+}
+
+function addMods() {
+ let modTotal = 1
+ for (let i = 0; i < target.items.length; i++) {
+  const item = target.items[i];
+  modTotal += item.modifier
+ }
+ if (modTotal <= 0) {
+  modTotal = 0
+ }
+ return modTotal
 }
 
 function draw() {
- if (health <= 0) {
-  health = 0
+ if (target.health <= 0) {
+  target.health = 0
  }
- document.getElementById("health").innerText = " " + health;
- document.getElementById("hits").innerText = " " + hits++;
+ document.getElementById("health").innerText = " " + target.health;
+ document.getElementById("hits").innerText = " " + target.hits;
 }
 
 function slap() {
- health -= 1
- hits += 0
+ target.health -= 1 * addMods()
+ target.hits += 1
  draw()
 }
 
 function kick() {
- health -= 10
- hits += 0
+ target.health -= 10 * addMods()
+ target.hits += 1
  draw()
 }
 
 function punch() {
- health -= 5
- hits += 0
+ target.health -= 5 * addMods()
+ target.hits += 1
  draw()
 }
 
 function shield() {
- mods.shield
+ target.items.push(mods.shield)
 }
 
 function amp() {
- mods.amp
+ target.items.push(mods.amp)
+
 }
 
 function heal() {
- mods.heal
+ target.items.push(mods.heal)
+ target.health += 15
+ draw()
 }
 
 draw()
